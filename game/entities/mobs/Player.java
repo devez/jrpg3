@@ -113,7 +113,7 @@ public class Player extends Mob {
 							// sth
 							canInteract = true;
 							if (Gdx.input.isKeyPressed(Keys.E)) {
-								MyGuiManager.init(0, e);
+								MyGuiManager.initChat(0, e);
 							}
 							break;
 						}

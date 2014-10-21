@@ -15,6 +15,6 @@ public abstract class GuiEntity {
 	protected int height;
 
 
-	public abstract void render(SpriteBatch guiBatch, String text);
+	public abstract void render(SpriteBatch guiBatch);
 
 }

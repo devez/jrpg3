@@ -33,11 +33,6 @@ public class MyGuiManager extends Manager {
 
 	}
 
-	public static void init(int id, Entity entity) {
-		currentGuiEntity = chat;
-		e = entity;
-	}
-
 	@Override
 	public void dispose() {
 		guiBatch.dispose();
@@ -53,7 +48,7 @@ public class MyGuiManager extends Manager {
 		guiBatch.begin();
 		if (currentGuiEntity != null) {
 			if (e != null) {
-				currentGuiEntity.render(guiBatch, ((Npc) e).getTempText());
+				currentGuiEntity.render(guiBatch);
 			}
 		}
 		guiBatch.end();
@@ -68,6 +63,12 @@ public class MyGuiManager extends Manager {
 	public static void stop() {
 		currentGuiEntity = null;
 		e = null;
+	}
+
+	public static void initChat(int id, Entity entity) {
+		currentGuiEntity = chat;
+		e = entity;
+		((ChatGui) chat).init(id, e);
 	}
 
 }
